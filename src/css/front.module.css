@@ -31,3 +31,13 @@
     color: white;
     height: 30px;
 }
+.boxs:after {
+    box-shadow: inset 0px 0px 1000px rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: "";
+  }
+  

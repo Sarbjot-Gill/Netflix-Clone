@@ -3,7 +3,7 @@ import Style from "../css/front.module.css";
 export default function Inputcard() {
   return (
     <>
-  
+  <div className={Style.boxs}>
     <div
       style={{
         backgroundImage:
@@ -56,7 +56,7 @@ export default function Inputcard() {
       </center>
       </div>
     </div>
-    
+    </div>
     </>
   );
 }
