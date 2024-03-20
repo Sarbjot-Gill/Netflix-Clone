@@ -13,7 +13,7 @@ export default function Hcard4() {
                 </Col>
                 <Col style={{marginTop:"10%"}}>  <center>
                  <div style={{fontSize:"50px", fontWeight:"bolder"}}>Create profiles for kids</div></center>
-                <h4 style={{marginLeft:"23%" , marginTop:"10px"}}>Send children on adventures with their favourite characters in a space made just for them—free with your membership.</h4>
+                <h4 style={{marginLeft:"90px" , marginTop:"10px"}}>Send children on adventures with their favourite characters in a space made just for them—free with your membership.</h4>
                 </Col>
             </Row>
              </div>

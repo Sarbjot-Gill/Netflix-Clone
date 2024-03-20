@@ -13,7 +13,7 @@ export default function Hcard3() {
                 Watch everywhere
               </div>
             </center>
-            <h4 style={{ marginLeft: "23%", marginTop: "10px" }}>
+            <h4 style={{ marginLeft: "150px", marginTop: "10px" }}>
               Stream unlimited movies and TV shows on your phone, tablet,
               laptop, and TV.
             </h4>

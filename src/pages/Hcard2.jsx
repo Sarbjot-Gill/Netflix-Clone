@@ -5,10 +5,10 @@ export default function Hcard2() {
     <div className="card" style={{ backgroundColor: "black", color: "white" }}>
       <div className="card-body">
         <Row style={{ height: "70vh" }}>
-          <Col sm={5}
+          <Col 
             style={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "end",
               alignItems: "center",
             }}
           >
@@ -18,8 +18,8 @@ export default function Hcard2() {
                 style={{
                   border: "solid",
                   position: "absolute",
-                  width: "27%",
-                  marginLeft: "7%",
+                  width: "400px",
+                  marginLeft: "100px",
                   bottom: "80px",
                   backgroundColor: "black",
                   borderRadius: "10px",
@@ -49,7 +49,7 @@ export default function Hcard2() {
               alignItems: "center",
             }}
           >
-            <div style={{ width: "75%" }}>
+            <div style={{ width: "600px" }}>
               <p
                 style={{
                   fontSize: "50px",
