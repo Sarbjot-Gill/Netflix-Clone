@@ -1,6 +1,5 @@
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap/esm";
-
 export default function Hcard3() {
   return (
     <div className="card" style={{ backgroundColor: "black", color: "white" }}>
@@ -25,18 +24,17 @@ export default function Hcard3() {
               alignItems: "center",
             }}
           >
-            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"></img>
-            <video
+             <video
               style={{
-                position:"absolute",
                 marginBottom:"160px",
                 height:"220px",
-                width:"47px"
-
+                width:"350px"
               }}
               autoPlay playsInline muted loop
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
             ></video>
+            <img style={{position:"absolute"}} src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"></img>
+           
           </Col>
         </Row>
       </div>

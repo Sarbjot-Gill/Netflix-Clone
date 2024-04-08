@@ -1,9 +1,12 @@
 import Nnavbar from "./Navbar";
 import Style from "../css/front.module.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 export default function Inputcard() {
+  const [mail , setMail] = useState("")
   return (
     <>
-      <div className={Style.boxs}>
+      
         <div
           style={{
             background:
@@ -37,26 +40,32 @@ export default function Inputcard() {
                   <input
                     className={`${Style.inp} `}
                     placeholder="Email Adress"
-                    type="text"
+                    type="email"
+                    onChange={(e) => {
+                     setMail(e.target.value)
+                    }}
                   />
-                  <button
+                  <Link
                     className="btn"
+                    to={"signup?mail=" + mail}
                     style={{
                       backgroundColor: "red",
                       color: "white",
                       height: "50px",
                       width: "150px",
                       fontSize: "20px",
+                      
                     }}
+                
                   >
                    <b> Get Started</b>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </center>
           </div>
         </div>
-      </div>
+    
     </>
   );
 }

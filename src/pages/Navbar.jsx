@@ -7,7 +7,7 @@ export default function Nnavbar() {
   return (
     <Navbar className="bg-transparent ">
       <Container>
-        <Navbar.Brand href="#home"><img src={Nimg} style={{height:"50px" , width:"150px"}}></img></Navbar.Brand>
+        <Navbar.Brand href="#home"><Link to="/"><img src={Nimg} style={{height:"50px" , width:"150px"}}></img></Link></Navbar.Brand>
         <Navbar.Collapse className="justify-content-end" style={{zIndex:"4"}}>
 
           <select className={Style.dropinp}>

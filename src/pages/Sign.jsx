@@ -10,14 +10,14 @@ export default function Sign() {
       <div className={Sstyle.fflex}
       >
         <div
-          className={`${Sstyle.ccard} card`}
+          className={`${Sstyle.ccard} `}
           
         >
-          <div className="card-body" style={{width:"350px" ,marginLeft:"50px" ,marginTop:"40px"}}><h2>Sign In</h2>
+          <div className="card-body" style={{width:"350px" ,marginLeft:"50px" ,marginTop:"40px",color:"white"}}><h2>Sign In</h2>
           <div style={{marginTop:"30px"}}>
             <form>
-                <input className={`${Sstyle.inp} form-control`} placeholder="Email"  type="text"/>
-                <input  className={`${Sstyle.inp} form-control`}placeholder="Password" type="password"/>
+                <input className={`${Sstyle.inp} bg-transparent`} placeholder="Email"  type="text"/>
+                <input  className={`${Sstyle.inp} bg-transparent`}placeholder="Password" type="password"/>
                 <button className="btn " style={{width:"100%", backgroundColor:"red",color:"white",marginBottom:"20px"}}>Sign In</button>
             </form>
             <center><p>Forget Password?</p></center>
