@@ -1,0 +1,28 @@
+.p{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 250px;
+    height: 35px;
+    background:linear-gradient(to right, #885BF1, #4542A9, #383F9D);
+    margin-top: 20px;
+    font-weight: 600;
+    
+}
+.black{
+    height: 40px;
+    padding-top: 5px;
+   
+}
+.black:hover{
+    background: linear-gradient(rgba(1, 1, 1, 0.3), rgba(1, 1, 1, 0.3));
+    
+}
+
+.update:hover{
+    background: linear-gradient(rgba(1, 1, 1, 0.3), rgba(1, 1, 1, 0.3));
+}
+

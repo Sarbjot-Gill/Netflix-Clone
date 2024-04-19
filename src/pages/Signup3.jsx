@@ -5,10 +5,11 @@ import Footer from "./Footer";
 import Ustyle from "../css/sign.module.css";
 import { useEffect, useState } from "react";
 
-export default function Signup3({x}) {
+export default function Signup3({x,y}) {
   const[shadow, setShadow] = useState(1)
   function stepClick(){
     x(4)
+    y(shadow)
   }
  useEffect(()=>{
  

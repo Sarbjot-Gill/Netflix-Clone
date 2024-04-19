@@ -1,0 +1,8 @@
+.pass{
+    width: 500px;
+    height: 50px;
+    background-color: white;
+    margin-top: 60px;
+    border: solid 1px;
+    border-radius: 5px;
+}

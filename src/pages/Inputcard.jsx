@@ -1,9 +1,14 @@
 import Nnavbar from "./Navbar";
 import Style from "../css/front.module.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react"
+import { useNavigate } from 'react-router-dom';
+
 export default function Inputcard() {
+  const navigate = useNavigate()
   const [mail , setMail] = useState("")
+  function handles(){
+    navigate("/signup" , {state:mail})
+  }
   return (
     <>
       
@@ -37,6 +42,7 @@ export default function Inputcard() {
                   membership.
                 </h5>
                 <div >
+                 <form onSubmit={handles} >
                   <input
                     className={`${Style.inp} `}
                     placeholder="Email Adress"
@@ -45,9 +51,9 @@ export default function Inputcard() {
                      setMail(e.target.value)
                     }}
                   />
-                  <Link
+                  <button
                     className="btn"
-                    to={"signup?mail=" + mail}
+                    type="submit"
                     style={{
                       backgroundColor: "red",
                       color: "white",
@@ -59,7 +65,8 @@ export default function Inputcard() {
                 
                   >
                    <b> Get Started</b>
-                  </Link>
+                  </button>
+                  </form>
                 </div>
               </div>
             </center>

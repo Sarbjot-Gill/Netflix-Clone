@@ -21,6 +21,7 @@
   width: 350px;
   border: solid 1px white;
   border-radius: 10px;
+  color: white;
 }
 .inp::placeholder {
   color: white;
@@ -69,4 +70,5 @@
   margin-bottom: 0;
   font-size: 14px;
   color: gray;
+  
 }

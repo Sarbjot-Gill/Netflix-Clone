@@ -1,0 +1,26 @@
+.in{
+    height: 50px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.b{
+   
+    height: 100vh;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+.p{
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    margin-left: 40px;
+}
+.colhov{
+    width: 220px;
+    height: 100px;
+   
+}

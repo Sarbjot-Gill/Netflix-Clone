@@ -2,17 +2,40 @@ import { useState } from 'react'
 import Footer from './Footer'
 import Nnavbar from './Navbar'
 import { Button } from 'react-bootstrap'
+import {useLocation} from 'react-router-dom';
 import Signup2 from './Signup2';
 import Signup3 from './Signup3';
 import Signup4 from './Signup4';
+import Signup5 from './Signup5';
 
 export default function Signup() {
+    const loction = useLocation()
+    console.log(loction);
     const[step , setStep] = useState (1);
-    const queryParameters = new URLSearchParams(window.location.search)
-    const mail = queryParameters.get("mail")
+    const[password , setPassword] = useState('')
+    const[plan , setPlan] = useState()
+    function getPlan(data){
+        if(data ===1){
+            setPlan('Mobile')
+        }else if(data ===2){
+            setPlan('Basic')
+        }else if(data ===3){
+            setPlan('Standard')
+        }else if(data ===4){
+            setPlan('Premimum')
+        }
+    }
+    const formData = {email : loction.state,pass:password,Plan:plan}
+    console.log(formData)
+    function signpass (e){
+        console.log(e)
+        setStep(2)
+        
+    }
     function getData(data){
         setStep(data)
     }
+    
     if(step === 2){
         return(
             <Signup2  f = { getData} />
@@ -20,12 +43,17 @@ export default function Signup() {
     }
     else if(step === 3){
         return(
-            <Signup3 x = { getData}/>
+            <Signup3 x = { getData} y = {getPlan}/>
         )
     }
     else if(step === 4){
         return(
-            <Signup4 />
+            <Signup4 x = { getData} />
+        )
+    }
+    else if(step === 5){
+        return(
+            <Signup5 x = { getData} a = {plan}/>
         )
     }
 
@@ -41,14 +69,12 @@ export default function Signup() {
                     <h2>Joining Netflix is easy.</h2>
                     <p style={{fontSize:"20px" , width:"400px"}}>Enter your password and youll be watching in no time.</p>
                     <div className='mt-4'>
-                        <form> 
+                        <form onSubmit={signpass}> 
                             <label>Email</label>
-                            <p><b>{mail}</b></p>
-                            <input type='password' className='form-control' placeholder='Enter Password' style={{height:"60px", width:"450px" , border:"solid 1px grey"  }}></input>
+                            <p><b>{loction.state}</b></p>
+                            <input type='password' className='form-control' placeholder='Enter Password' onChange={(e)=>{setPassword(e.target.value)}} style={{height:"60px", width:"450px" , border:"solid 1px grey"  }} required></input>
                             {/* <h6 className='text-primary py-2'>Forgot your Password?</h6> */}
-                            <Button variant='danger' onClick={()=>{
-                                setStep(2)
-                            }} style={{width:"100%",marginTop:"10px" ,height:"70px" , backgroundColor:"red" , fontSize:"25px"}}>Next</Button>
+                            <Button variant='danger' type='submit'  style={{width:"100%",marginTop:"10px" ,height:"70px" , backgroundColor:"red" , fontSize:"25px"}}>Next</Button>
                         </form>
                     </div>
                 </div>

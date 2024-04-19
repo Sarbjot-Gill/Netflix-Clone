@@ -1,0 +1,32 @@
+.changeplanrow {
+  display: flex;
+  justify-content: center;
+  border: solid 4px #ccc;
+
+  height: 110px;
+  margin: 15px;
+}
+
+.changeplancol1 {
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.changeplancol2 {
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.changeplancol3 {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.changeplanrow:hover{
+  border: solid 4px rgb(59, 71, 240);
+  cursor: pointer;
+}
