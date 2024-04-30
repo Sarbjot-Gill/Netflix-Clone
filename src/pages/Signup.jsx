@@ -10,9 +10,10 @@ import Signup5 from './Signup5';
 
 export default function Signup() {
     const loction = useLocation()
-    console.log(loction);
+    
     const[step , setStep] = useState (1);
     const[password , setPassword] = useState('')
+    const[pass, setpass] = useState(false)
     const[plan , setPlan] = useState()
     function getPlan(data){
         if(data ===1){
@@ -26,10 +27,16 @@ export default function Signup() {
         }
     }
     const formData = {email : loction.state,pass:password,Plan:plan}
-    console.log(formData)
-    function signpass (e){
-        console.log(e)
-        setStep(2)
+    // console.log(formData)
+    const signpass = (e) => {
+        e.preventDefault()
+        if(password.length >8){
+        setStep(2)}
+        else{
+            
+            document.getElementById("pass").className = "form-control is-invalid"
+            setpass(true)
+        }
         
     }
     function getData(data){
@@ -53,7 +60,7 @@ export default function Signup() {
     }
     else if(step === 5){
         return(
-            <Signup5 x = { getData} a = {plan}/>
+            <Signup5 data = {formData} x = { getData} a = {plan}/>
         )
     }
 
@@ -72,8 +79,8 @@ export default function Signup() {
                         <form onSubmit={signpass}> 
                             <label>Email</label>
                             <p><b>{loction.state}</b></p>
-                            <input type='password' className='form-control' placeholder='Enter Password' onChange={(e)=>{setPassword(e.target.value)}} style={{height:"60px", width:"450px" , border:"solid 1px grey"  }} required></input>
-                            {/* <h6 className='text-primary py-2'>Forgot your Password?</h6> */}
+                            <input type='password' className='form-control' id='pass' placeholder='Enter Password' onChange={(e)=>{setPassword(e.target.value)}} style={{height:"60px", width:"450px" , border:"solid 1px grey"  }} required></input>
+                           {pass ? <label className='text-danger'>Password must be longer than 8 digits</label> : <></>}
                             <Button variant='danger' type='submit'  style={{width:"100%",marginTop:"10px" ,height:"70px" , backgroundColor:"red" , fontSize:"25px"}}>Next</Button>
                         </form>
                     </div>

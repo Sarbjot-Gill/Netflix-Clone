@@ -3,8 +3,10 @@ import Nnavbar from "./Navbar";
 import Style from "../css/changeplan.module.css";
 import Changeplanfooter from "./Changeplanfooter";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Changeplan() {
+  const [plan,setPlan]= useState()
   return (
     <>
       <Nnavbar />

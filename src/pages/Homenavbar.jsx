@@ -25,7 +25,7 @@ export default function Homenavbar() {
   useEffect(()=>{},[search])
 
   return (
-    <div>
+    <div style={{width:"100%"}}>
       <Navbar variant="dark" style={{ position: "absolute", width: "100%" }}>
         <Container style={{ marginLeft: "50px", width: "190%" }}>
           <Navbar.Brand>

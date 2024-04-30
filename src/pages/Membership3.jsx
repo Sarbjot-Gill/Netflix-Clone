@@ -1,15 +1,62 @@
-import React from "react";
-import Nnavbar from "./Navbar";
+import { useState } from "react";
 import Footer from "./Footer";
 import { Col, Row } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import Mstyle from "../css/membership.module.css";
-import { Link } from "react-router-dom";
-export default function Membership3({p}) {
+import { Link, useLocation, useNavigate } from "react-router-dom";
+export default function Membership3({p ,prodata}) {
+  const[profileone , setprofileone] = useState(prodata.one)
+  const[profiletwo , setprofiletwo] = useState(prodata.two)
+  const[profilethree , setprofilethree] = useState(prodata.three)
+  const[profilefour , setprofilefour] = useState(prodata.four)
+  const[profilefive , setprofilefive] = useState(prodata.five)
+  const navigate = useNavigate()
+  const loction = useLocation();
+let profile = [{name : prodata.one , age : "A"}]
+const handleClick = () => {
+  if(profiletwo !=="" || prodata.two !== ""){
+    if(profiletwo === prodata.two){
+      profile.push({name : prodata.two , age:"A"})
+    }else{
+      profile.push({name : profiletwo , age:"C"})
+    }
+  }
+  if(profilethree !=="" || prodata.three !== ""){
+    if(profilethree === prodata.three){
+      profile.push({name : prodata.three , age:"A"})
+    }else{
+      profile.push({name : profilethree , age:"C"})
+    }
+  }
+  if(profilefour !=="" || prodata.four !== ""){
+    if(profilefour === prodata.four){
+      profile.push({name : prodata.four , age:"A"})
+    }else{
+      profile.push({name : profilefour , age:"C"})
+    }
+  }
+  if(profilefive !=="" || prodata.five !== ""){
+    if(profilefive === prodata.five){
+      profile.push({name : prodata.five , age:"A"})
+    }else{
+      profile.push({name : profilefive , age:"C"})
+    }
+  }
+  fetch('http://127.0.0.1:3000/addprofile', 
+  { method : "post" ,headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({email:loction.state,profile:profile})})
+   .then(() =>{
+   
+   }
+)
+navigate("/pro",{state:loction.state})
+} 
 
   return (
     <div>
-      <Nnavbar />
+ 
       <hr></hr>
       <div
         style={{
@@ -86,7 +133,9 @@ export default function Membership3({p}) {
                 <input
                   className={Mstyle.in}
                   type="text"
-                  placeholder="name"
+                  placeholder={prodata.one}
+                  onChange={(e)=>{setprofileone(e.target.value)}}
+                  
                 ></input>
                 <br></br>
                 <h5>Add Profile?</h5>
@@ -104,7 +153,9 @@ export default function Membership3({p}) {
                 <input
                   className={Mstyle.in}
                   type="text"
-                  placeholder="name"
+                  placeholder={prodata.two}
+                  onChange={(e)=>{setprofiletwo(e.target.value)}}
+                  onFocus={((e) =>{e.target.value = null})}
                 ></input>{" "}
                 <br></br>
                 <svg
@@ -121,7 +172,9 @@ export default function Membership3({p}) {
                 <input
                   className={Mstyle.in}
                   type="text"
-                  placeholder="name"
+                  placeholder={prodata.three}
+                  onChange={(e)=>{setprofilethree(e.target.value)}}
+                  onFocus={((e) =>{e.target.value = null})}
                 ></input>
                 <br></br>
                 <svg
@@ -138,7 +191,9 @@ export default function Membership3({p}) {
                 <input
                   className={Mstyle.in}
                   type="text"
-                  placeholder="name"
+                  placeholder={prodata.four}
+                  onChange={(e)=>{setprofilefour(e.target.value)}}
+                  onFocus={((e) =>{e.target.value = null})}
                 ></input>
                 <br></br>
                 <svg
@@ -155,12 +210,16 @@ export default function Membership3({p}) {
                 <input
                   className={Mstyle.in}
                   type="text"
-                  placeholder="name"
+                  placeholder={prodata.five}
+                  onChange={(e)=>{setprofilefive(e.target.value)}}
+                  onFocus={((e) =>{e.target.value = null})}
+                 
                 ></input>
                 <br></br>
                 <p>Only people who live with you may use your account.</p>
-                <Link to="/pro">
+             
                 <Button 
+                onClick={handleClick}
                   style={{
                     width: "100%",
                     marginTop: "20px",
@@ -171,7 +230,7 @@ export default function Membership3({p}) {
                 >
                   Next
                 </Button>
-                </Link>
+            
               </Col>
             </Row>
           </div>

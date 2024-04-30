@@ -11,7 +11,7 @@ export default function ({p}) {
   }
   return (
     <div>
-      <Nnavbar />
+     
       <hr></hr>
       <div
         style={{

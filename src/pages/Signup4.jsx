@@ -40,12 +40,12 @@ export default function Signup4({x}) {
 Cancel easily online.</h6>
           </center>
           <div>
-            <div className="card mb-2" onClick={nextP} style={{height:"60px",border:"solid grey 1px"}}>
+            <div className="card mb-2" onClick={nextP} style={{height:"60px",border:"solid grey 1px",cursor:"pointer"}}>
                 <div className="card-body">
                     <p>Credit or Debit Card</p>
                 </div>
             </div>
-            <div className="card" style={{height:"60px",border:"solid grey 1px"}}>
+            <div className="card" style={{height:"60px",border:"solid grey 1px",cursor:"pointer"}}>
                 <div className="card-body">
                     <p>UPI AutoPay</p>
                 </div>
