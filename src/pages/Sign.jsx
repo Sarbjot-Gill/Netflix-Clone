@@ -20,7 +20,7 @@ export default function Sign() {
      .then((response) =>response.json().then((dataa) => {
       // console.log(dataa)
       if(dataa === "success"){
-      navigate("/home" , {state:mail})
+      navigate("/pro" , {state:mail})
       }else if(dataa === "fail"){
       alert("user dont exist")
     }else if(dataa === "pass not match"){

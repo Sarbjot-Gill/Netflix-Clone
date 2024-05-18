@@ -65,6 +65,7 @@ export default function Inputcard() {
                     onChange={(e) => {
                      setMail(e.target.value)
                     }}
+                    required
                   />
                   <button
                     className="btn"

@@ -1,8 +1,15 @@
 .changeplanrow {
   display: flex;
   justify-content: center;
+  
   border: solid 4px #ccc;
-
+  height: 110px;
+  margin: 15px;
+}
+.changeplanroww {
+  display: flex;
+  justify-content: center;
+  border: solid 4px rgb(59, 71, 240);
   height: 110px;
   margin: 15px;
 }
@@ -12,6 +19,15 @@
   display: flex;
   align-items: center;
   font-weight: 500;
+  text-align: center;
+}
+.changeplancoll1 {
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  text-align: center;
 }
 
 .changeplancol2 {

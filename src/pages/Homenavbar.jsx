@@ -3,14 +3,17 @@ import { Link, useNavigate } from "react-router-dom";
 import Nimg from "../assets/Logonetflix.png";
 import Hstyle from "../css/home.module.css";
 import { useEffect, useState } from "react";
-export default function Homenavbar() {
+import axios from "axios";
+export default function Homenavbar({x}) {
   const navigate = useNavigate()
+  
+  let pro = x.otherpro
   const [search , setSearch] = useState(false)
   function nextPagetv(){
-    navigate("/tv" , {state:"Tv Show"})
+    navigate("/tv" , {state:{type:"Tv Show",profile : x}})
   } 
   function nextPagemov(){
-    navigate("/tv" , {state:"Movie"})
+    navigate("/tv" , {state:{type:"Movie",profile : x}})
   } 
   function handleSearch(){
     setSearch(true)
@@ -20,6 +23,10 @@ export default function Homenavbar() {
     setSearch(false)
     console.log(search)
     
+  }
+  function logOut (){
+    axios.get("http://127.0.0.1:3000/logout")
+    navigate("/")
   }
   
   useEffect(()=>{},[search])
@@ -34,7 +41,7 @@ export default function Homenavbar() {
             </Link>
           </Navbar.Brand>
           <Nav style={{ marginRight: "200px" }}>
-            <Nav.Link className={Hstyle.w}> <Link style={{textDecoration:"none",color:"white"}} to="/home">Home</Link></Nav.Link>
+            <Nav.Link className={Hstyle.w}> <Link style={{textDecoration:"none",color:"white"}} to="/home" state={x}>Home</Link></Nav.Link>
               <Nav.Link  className={Hstyle.w} onClick={nextPagetv}>Tv Show</Nav.Link>
               <Nav.Link className={Hstyle.w} onClick={nextPagemov}>Movies</Nav.Link>
     
@@ -79,23 +86,44 @@ export default function Homenavbar() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  {x.profile.name}
                 </p>
                 <ul className="dropdown-menu dropdown-menu-dark">
+                  {pro.map((e)=>{
+                    return(
+                      <>
+                    <li onClick={(()=>{
+                      let arr = {
+                        email: x.email,
+                        otherpro: "",
+                        profile: e
+                    };
+                    let all = x.otherpro;
+                    let opro = x.profile
+                    all.push(opro)
+                   all.splice(e,1)
+                   arr.otherpro = all
+                   navigate("/home" , {state:arr})
+                    console.log(arr )
+                    })}>
+                  
+                    {e.name}
+                    
+                  </li>
+                  </>
+                  )
+                  })}
+          
                   <li>
-                    <Link className="dropdown-item" to="/acc">
+                  <Link className="dropdown-item" to="/acc" state={x}>
                       Account
                     </Link>
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                  
+                  <li className="dropdown-item" onClick={logOut}>
+                
+                    Logout
+                    
                   </li>
                 </ul>
               </li>

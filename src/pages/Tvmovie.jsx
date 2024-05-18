@@ -6,16 +6,17 @@ import { useLocation } from "react-router-dom";
 
 export default function Tvmovie() {
     let loction = useLocation()
+    let pro = loction.state.profile
     const [type ,setType] = useState()
-
+    console.log(loction)
     useEffect(()=>{
-        setType(loction.state)     
+        setType(loction.state.type)     
     },[loction])
  
     
   return (
     <>
-    <Homenavbar />
+    <Homenavbar x = {pro}/>
     <Tvcard t = {type} />
     <Tvcontent  t = {type}/>
     </>

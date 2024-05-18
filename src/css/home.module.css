@@ -1,6 +1,7 @@
 .w{
     color: white !important;
 }
+
 .main{
     background:linear-gradient(rgba(0.5, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4)), url('https://occ-0-2991-2164.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABQzoSqSg1HlhLnyHj-wlM2wmBGtqBSUZSkMAR9YqSYFFBCdFFJv2iZNaqoSMex3qVmdpjeZU2ExFSYtUOsbA2hzsKso-f-CryuWh.webp?r=d06');   
     display: flex;

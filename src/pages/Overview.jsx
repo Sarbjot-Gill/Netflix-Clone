@@ -1,8 +1,45 @@
 import { Card, Col, Row } from "react-bootstrap";
 import Style from "../css/account.module.css";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-export default function Overview({f}) {
+export default function Overview({f,user , x}) {
+  let date = user.date;
+  let cardnum = user.card[0].cardnumber;
+  let len = cardnum.length
+  let num = cardnum[len - 1] + cardnum[len - 2] + cardnum[len - 3] + cardnum[len - 4]
+  console.log(num)
+  function getMonth (e) {
+    if(e === 0){
+      return("January")
+    }else if(e === 1){
+      return("February")
+    }else if(e === 2){
+      return("March")
+    }else if(e === 3){
+      return("April")
+    }else if(e === 4){
+      return("May")
+    }else if(e === 5){
+      return("June")
+    }else if(e === 6){
+      return("July")
+    }else if(e === 7){
+      return("August")
+    }else if(e === 8){
+      return("September")
+    }else if(e === 9){
+      return("October")
+    }else if(e === 10){
+      return("November")
+    }else if(e === 11){
+      return("December")
+    }
+  }
+  let currentMonth = getMonth(date[0].month)
+  let nextMonth = getMonth(date[0].month + 1)
+
+
   function handleClick (){
     f(2)
   }
@@ -15,7 +52,7 @@ export default function Overview({f}) {
 
         <Card>
           <div className={`${Style.p} `}>
-            <p className="mt-1">Member Since April 2024</p>
+            <p className="mt-1">Member Since {currentMonth} {date[0].year}</p>
           </div>
           <Card.Body>
             <div>
@@ -38,7 +75,7 @@ export default function Overview({f}) {
                   marginBottom: "0px",
                 }}
               >
-                Next payment: 13 May 2024
+                Next payment: {date[0].date} {nextMonth} {date[0].year}
               </p>
               <p
                 style={{
@@ -60,7 +97,7 @@ export default function Overview({f}) {
                   <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
                   <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
                 </svg>{" "}
-                ss@sbi
+                XXXX XXXX XXXX {num}
               </p>
               <hr></hr>
               <Row>
@@ -101,7 +138,7 @@ export default function Overview({f}) {
         <p style={{ fontSize: "19px" }}>Quick links</p>
         <Card>
           <Card.Body>
-            <Link style={{textDecoration:"none",color:"black"}} to="/cplan">
+            <Link style={{textDecoration:"none",color:"black"}} to="/cplan" state={{user:user , x:x}}>
             <Row>
               <Col>
                 <p
@@ -187,7 +224,7 @@ export default function Overview({f}) {
             </Row>
             </Link>
             <hr></hr>
-            <Link style={{textDecoration:"none",color:"black"}} to="/changepassword">
+            <Link style={{textDecoration:"none",color:"black"}} to="/changepassword" state={{user:user , x:x}}>
             <Row>
               <Col>
                 <p

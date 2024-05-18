@@ -9,7 +9,11 @@ export default function ({p}) {
   function handleClick(){
     p(2)
   }
+  function handlecolor(e){
+    e.target.style.border = "red solid 2px"
+  }
   return (
+    <>
     <div>
      
       <hr></hr>
@@ -70,7 +74,7 @@ export default function ({p}) {
               <Col>
                 <Row>
                   <Col >
-                    <div className={`${Mstyle.colhov} card`} >
+                    <div className={`${Mstyle.colhov} card`}  onClick={handlecolor}>
                       <center>
                         {" "}
                         <svg
@@ -212,5 +216,6 @@ export default function ({p}) {
       </div>
       <Footer />
     </div>
+    </>
   );
 }

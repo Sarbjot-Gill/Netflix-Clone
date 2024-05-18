@@ -13,14 +13,20 @@ import Managepayment from './pages/Managepayment'
 import Changepassword from './pages/Changepassword'
 import Billingdetails from './pages/Billingdetails'
 import Privateroutes from './PrivateRoutes'
+import List from './pages/List'
+import AddPro from './pages/AddPro'
+import UnprivateRoutes from './UnprivateRoutes'
 export default function App() {
   return (
     <BrowserRouter>
     <Routes >
+      <Route element={<UnprivateRoutes />}>
     <Route path='/' element={<Front />} />
       <Route path='/signin' element={<Sign />} />
       <Route path='/signup' element={<Signup />} />
-      {/* <Route element={<Privateroutes/>}>
+      </Route>
+    
+      <Route element={<Privateroutes/>}>
       <Route path='/home' element={<Home />} />
       <Route path='/acc' element={<Account />} />
       <Route path='/member' element={<Member />} />
@@ -31,21 +37,9 @@ export default function App() {
       <Route path='/managepayment' element={<Managepayment/>}/>
       <Route path='/changepassword' element={<Changepassword/>}/>
       <Route path='/billingdetails' element={<Billingdetails/>}/>
-      </Route> */}
-      {/* <Route path='/' element={<Front />} />
-      <Route path='/signin' element={<Sign />} />
-      <Route path='/signup' element={<Signup />} /> */}
-      <Route path='/home' element={<Home />} />
-      <Route path='/acc' element={<Account />} />
-      <Route path='/member' element={<Member />} />
-      <Route path='/pro' element={<Profiles />} />
-      <Route path='/play' element={<Vplayer />} />
-      <Route path='/tv' element={<Tvmovie />} />
-      <Route path='/cplan' element={<Changeplan />} />
-      <Route path='/managepayment' element={<Managepayment/>}/>
-      <Route path='/changepassword' element={<Changepassword/>}/>
-      <Route path='/billingdetails' element={<Billingdetails/>}/>
-
+      <Route path='/addpro' element={<AddPro />} />
+      <Route path='/list' element={<List />} />
+      </Route>
     </Routes>
     </BrowserRouter>
   )

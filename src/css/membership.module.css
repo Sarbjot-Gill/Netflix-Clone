@@ -17,10 +17,13 @@
     justify-content: center;
     align-items: center;
     margin-top: 150px;
-    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .colhov{
     width: 220px;
     height: 100px;
+    z-index: 5;
    
 }

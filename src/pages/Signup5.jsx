@@ -15,6 +15,9 @@ export default function Signup5({a ,x,data}) {
   function nextP(){
     x(3)
   }
+  let date = new Date()
+  let currentDate = {date : date.getUTCDate() , month : date.getUTCMonth() , year : date.getUTCFullYear()}
+console.log(currentDate)
 const email = data.email;
   useEffect(() =>{ if(a === "Mobile"){
     setPrice("149")
@@ -29,6 +32,7 @@ const email = data.email;
     e.preventDefault()
     let card = {name : e.target.cname.value, cardnumber : e.target.cno.value , exdate :e.target.cdate.value , cvv :e.target.cvv.value}
     data.card = card
+    data.date = currentDate
     console.log(data)
     if(e.target.cno.value.length <16){
       e.target.cno.style.border = "2px solid red"
